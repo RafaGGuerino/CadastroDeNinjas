@@ -3,7 +3,7 @@ package dev.rafagguerino.CadastroDeNinjas.Missoes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("missoes")
+@RequestMapping("/missoes")
 public class MissaoController {
 
     // localhost:8080/missoes/*
@@ -14,6 +14,11 @@ public class MissaoController {
         return "Lista de missoes";
     }
 
+    @GetMapping("/listarID")
+    public String listarMissoesPorID() {
+        return "Lista de missoes por ID";
+    }
+
     // POST --> mandar uma requisição para criar as missões
     @PostMapping("/criar")
     public String criarMissao() {
@@ -21,15 +26,15 @@ public class MissaoController {
     }
 
     // PUT --> mandar uma requisição para alterar as missões
-    @PutMapping("/alterar")
-    public String alterarMissao() {
-        return "Alterando a missao";
+    @PutMapping("/alterarID")
+    public String alterarMissaoPorID() {
+        return "Alterando a missao por ID";
     }
 
     // DELETE --> mandar uma requisição para deletar as missões
-    @DeleteMapping("/deletar")
-    public String deletarMissao() {
-        return "Deletando a missao";
+    @DeleteMapping("/deletarID")
+    public String deletarMissaoPorID() {
+        return "Deletando a missao por ID";
     }
 
 }
