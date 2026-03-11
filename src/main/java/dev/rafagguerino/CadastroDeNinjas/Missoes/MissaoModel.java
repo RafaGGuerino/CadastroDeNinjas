@@ -1,5 +1,6 @@
 package dev.rafagguerino.CadastroDeNinjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.rafagguerino.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,5 +36,6 @@ public class MissaoModel {
 
     // @OneToMany: Uma missao pode ter varios ninjas
     @OneToMany(mappedBy = "missao")
+    @JsonIgnore
     private List<NinjaModel> listaMissao;
 }
