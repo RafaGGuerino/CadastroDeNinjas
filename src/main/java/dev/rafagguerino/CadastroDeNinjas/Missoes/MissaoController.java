@@ -32,9 +32,9 @@ public class MissaoController {
     }
 
     // PUT --> mandar uma requisição para alterar as missões
-    @PutMapping("/alterarID")
-    public String alterarMissaoPorID() {
-        return "Alterando a missao por ID";
+    @PutMapping("/alterar/{id}")
+    public MissaoModel alterarMissaoPorID(@PathVariable Long id, @RequestBody MissaoModel missao) {
+        return missaoService.atualizaMissao(id, missao);
     }
 
     // DELETE --> mandar uma requisição para deletar as missões
